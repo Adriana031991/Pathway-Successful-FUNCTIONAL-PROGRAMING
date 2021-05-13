@@ -1,6 +1,6 @@
 package entornodedesarrolloparalapractica.carritodecompra;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class ArbolesDelPatioTest {
@@ -14,7 +14,7 @@ class ArbolesDelPatioTest {
 
         CarritoBuilder builder = new CarritoBuilder(30);
         ArbolesDelPatio carritoDeLaCompra = builder.build();
-        Assert.assertEquals(30, carritoDeLaCompra.contarNumeroArboles());
+        Assertions.assertEquals(30, carritoDeLaCompra.contarNumeroArboles());
     }
 
     @Test
@@ -22,7 +22,7 @@ class ArbolesDelPatioTest {
 
         CarritoBuilder builder = new CarritoBuilder(60,5);
         ArbolesDelPatio carritoDeLaCompra = builder.build();
-        Assert.assertEquals(300, carritoDeLaCompra.calcularTotalArboles());
+        Assertions.assertEquals(300, carritoDeLaCompra.calcularTotalArboles());
 
     }
 
@@ -30,21 +30,21 @@ class ArbolesDelPatioTest {
     public void shouldCalculateTotalLambda() throws Exception {
         CarritoBuilder builder = new CarritoBuilder(50,10);
         ArbolesDelPatio arbolesDelPatio = builder.build();
-        Assert.assertEquals(500,arbolesDelPatio.calcularTotalArbolesLambda());
+        Assertions.assertEquals(500,arbolesDelPatio.calcularTotalArbolesLambda());
     }
 
     @Test
     public void shouldCalculateTotalDesct() throws Exception {
         CarritoBuilder builder = new CarritoBuilder(50,100);
         ArbolesDelPatio arbolesDelPatio = builder.build();
-        Assert.assertEquals(250,arbolesDelPatio.calcularADescontadosArboles(100));
+        Assertions.assertEquals(250,arbolesDelPatio.calcularADescontadosArboles(100));
     }
 
     @Test
     public void shouldCalculateTotalDesctlambda() throws Exception {
         CarritoBuilder builder = new CarritoBuilder(50,100);
         ArbolesDelPatio arbolesDelPatio = builder.build();
-        Assert.assertEquals(250,arbolesDelPatio.calcularADescontadosArbolesLambda(100));
+        Assertions.assertEquals(250,arbolesDelPatio.calcularADescontadosArbolesLambda(100));
     }
 
     @Test
@@ -53,7 +53,7 @@ class ArbolesDelPatioTest {
         builder.add(-1);
         builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
         ArbolesDelPatio arbolesDelPatio = builder.build();
-        Assert.assertTrue(arbolesDelPatio.detecError());
+        Assertions.assertTrue(arbolesDelPatio.detecError());
     }
 
     @Test
@@ -62,7 +62,7 @@ class ArbolesDelPatioTest {
         builder.add(-1);
         builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
         ArbolesDelPatio arbolesDelPatio = builder.build();
-        Assert.assertTrue(arbolesDelPatio.detectErrorLambda());
+        Assertions.assertTrue(arbolesDelPatio.detectErrorLambda());
     }
 
     @Test
@@ -72,7 +72,7 @@ class ArbolesDelPatioTest {
         builder.add(-1);
         builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
         ArbolesDelPatio arbolesDelPatio = builder.build();
-        Assert.assertTrue(arbolesDelPatio.detectErrorFindFirst());
+        Assertions.assertTrue(arbolesDelPatio.detectErrorFindFirst());
 
     }
 
@@ -83,7 +83,7 @@ class ArbolesDelPatioTest {
         builder.add(-1);
         builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
         ArbolesDelPatio arbolesDelPatio = builder.build();
-        Assert.assertTrue(arbolesDelPatio.detectErrorFindAny());
+        Assertions.assertTrue(arbolesDelPatio.detectErrorFindAny());
 
     }
 
@@ -103,7 +103,7 @@ class ArbolesDelPatioTest {
         builder.add(-1);
         builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
         ArbolesDelPatio arbolesDelPatio = builder.build();
-        Assert.assertTrue(arbolesDelPatio.detectarErrorFindAnyParallel());
+        Assertions.assertTrue(arbolesDelPatio.detectarErrorFindAnyParallel());
     }
 
 
@@ -113,7 +113,7 @@ class ArbolesDelPatioTest {
         builder.add(-1);
         builder.addMultiple(TOTAL_SIZE,NUMBER_ADD);
         ArbolesDelPatio arbolesDelPatio = builder.build();
-        Assert.assertTrue(arbolesDelPatio.detectarErrorFindFirstParallel());
+        Assertions.assertTrue(arbolesDelPatio.detectarErrorFindFirstParallel());
     }
 
 

@@ -1,16 +1,14 @@
 package inmutable;
 
-import com.sun.jdi.Value;
+import org.immutables.value.Value;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /*
 
- */
-
-
+*/
+@Value.Immutable
 public final class Inmutable {
     private final String name;
     private final Integer age;
@@ -19,18 +17,7 @@ public final class Inmutable {
     public Inmutable(String name, Integer age, List anillos) {
         this.name = name;
         this.age = age;
-        this.anillos = anillos;
+        this.anillos = Collections.unmodifiableList(anillos);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public List getAnillos() {
-        return Collections.unmodifiableList(anillos);
-    }
 }
